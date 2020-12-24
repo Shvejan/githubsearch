@@ -11,7 +11,6 @@ class Main extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.getUsers = this.getUsers.bind(this);
   }
-
   handleChange(event) {
     // console.log(event.target.value);
     if (event.target.value === "") {
@@ -22,22 +21,17 @@ class Main extends Component {
       this.getUsers();
     }, 1000);
   }
-
   async getUsers() {
     if (
       this.state.value.length === 0 ||
       this.state.previousApiCall === this.state.value
     )
       return;
-
     this.setState({ previousApiCall: this.state.value });
     const result = await axios(
       ` https://api.github.com/search/users?q=${this.state.value}+in:user`
     );
-    // console.log(result.data.items);
     this.setState({ searchResults: result.data.items });
-
-    // this.setState(this.state.searchResults, result);
   }
 
   render() {
