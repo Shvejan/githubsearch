@@ -9,12 +9,11 @@ class Main extends Component {
     this.state = { value: "", searchResults: [], previousApiCall: "" };
 
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
     this.getUsers = this.getUsers.bind(this);
   }
 
   handleChange(event) {
-    // alert(event.target.value);
+    // console.log(event.target.value);
     if (event.target.value === "") {
       this.setState({ searchResults: [] });
     }
@@ -41,40 +40,17 @@ class Main extends Component {
     // this.setState(this.state.searchResults, result);
   }
 
-  handleSubmit(event) {
-    // alert("A name was submitted: " + this.state.value);
-    event.preventDefault();
-  }
-
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <div>
-            <div id="cover">
-              <div className="tb">
-                <div className="td">
-                  <input
-                    type="text"
-                    value={this.state.value}
-                    onChange={this.handleChange}
-                  />
-                </div>
-                <div className="td" id="s-cover">
-                  <button>
-                    <div id="s-circle"></div>
-                    <span></span>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div>
-              <SearchValues data={this.state.searchResults} />
-            </div>
-            {/* model */}
-            {/* <CardFunction /> */}
+      <div className="body">
+        <div className="App">
+          <img src={logo} alt="logo" className="App-logo" />
+          <div className="searchbox">
+            <input onChange={this.handleChange} className="searchbox" />
           </div>
+        </div>
+        <div className="container m-5">
+          <SearchValues data={this.state.searchResults} />
         </div>
       </div>
     );
