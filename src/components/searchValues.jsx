@@ -1,22 +1,24 @@
-import React, { Component } from 'react';
-import SearchValueField from './searchValueField';
-class SearchValues extends Component {
-    constructor(props) {
-        super(props);
-        this.state = { 
+import React, { Component } from "react";
+import SearchValueField from "./searchValueField";
+import { Row, Container } from "react-bootstrap";
 
-         };
-    }
-    
-    render() {
-        return (
-           <div>
-               {this.props.data.map((d,index)=>(
-                    <SearchValueField data={d} index={index}/>
-               ))}
-           </div>
-        );
-    }
+class SearchValues extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  render() {
+    return (
+      <div>
+        <Row>
+          {this.props.data.map((d, index) => (
+            <SearchValueField data={d} index={index} />
+          ))}
+        </Row>
+      </div>
+    );
+  }
 }
 
 export default SearchValues;

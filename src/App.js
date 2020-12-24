@@ -4,7 +4,8 @@ import SearchValues from "./components/searchValues";
 // import { useState } from "react";
 import React, { Component } from "react";
 import axios from "axios";
-import Card from "./components/card";
+import CardFunction from "./components/card";
+import { Container } from "react-bootstrap";
 class App extends Component {
   constructor(props) {
     super(props);
@@ -49,33 +50,35 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
+        <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <div>
             <div id="cover">
-              <form>
-                <div className="tb">
-                  <div className="td">
-                    <input
-                      type="text"
-                      value={this.state.value}
-                      onChange={this.handleChange}
-                    />
-                  </div>
-                  <div className="td" id="s-cover">
-                    <button type="submit">
-                      <div id="s-circle"></div>
-                      <span></span>
-                    </button>
-                  </div>
+              <div className="tb">
+                <div className="td">
+                  <input
+                    type="text"
+                    value={this.state.value}
+                    onChange={this.handleChange}
+                  />
                 </div>
-              </form>
+                <div className="td" id="s-cover">
+                  <button>
+                    <div id="s-circle"></div>
+                    <span></span>
+                  </button>
+                </div>
+              </div>
             </div>
-            <SearchValues data={this.state.searchResults} />
+            <div>
+              <Container>
+                <SearchValues data={this.state.searchResults} />
+              </Container>
+            </div>
             {/* model */}
-            <Card />
+            {/* <CardFunction /> */}
           </div>
-        </header>
+        </div>
       </div>
     );
   }
