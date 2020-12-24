@@ -206,3 +206,8 @@ button span:after {
   box-shadow: 0 10px 20px -5px rgba(255, 117, 117, 0.86);
   z-index: 125;
 } */
+.btnn {
+  width: 70%;
+  height: 60px;
+  margin-left: 12px;
+}

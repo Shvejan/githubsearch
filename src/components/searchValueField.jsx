@@ -18,7 +18,7 @@ class SearchValueField extends Component {
     const repos = await axios(this.props.data.repos_url);
 
     // alert(repos.length);
-    console.log(repos.data.length);
+    console.log(repos.data);
 
     this.setState({ topRepos: repos.data });
   }
@@ -48,15 +48,15 @@ class SearchValueField extends Component {
             />
             <br />
             <a href={this.props.data.html_url} target="_blank">
-              <Button className="align-self-center">View Profile</Button>
+              <Button className="btnn">View Profile</Button>
             </a>
-            <h2 className="m-3">{this.props.data.login}</h2>
-            <h3>total repos: {this.state.topRepos.length}</h3>
+            <h2 className="mt-3">{this.props.data.login}</h2>
+            <h4 className="">total repos: {this.state.topRepos.length}</h4>
             <br />
             <br />
             {this.state.topRepos.length > 2 && (
               <div>
-                <h3>Top Projects:</h3>
+                <p>Top Projects:</p>
                 <ul>
                   <a href={this.state.topRepos[0].html_url} target="_blank">
                     <li>{this.state.topRepos[0].name}</li>
