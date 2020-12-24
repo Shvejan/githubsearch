@@ -1,5 +1,7 @@
 import React, { Component } from "react";
-import { Card, Button, Col } from "react-bootstrap";
+// import { Card, Button, Col } from "react-bootstrap";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 class SearchValueField extends Component {
   constructor(props) {
     super(props);
@@ -11,17 +13,19 @@ class SearchValueField extends Component {
         <div>
           <div key={this.props.index}>
             {/* <p>{this.props.data.login}</p> */}
-            <Card style={{ width: "200px" }}>
-              <Card.Img
-                variant="top"
+            <div className="card">
+              <img
                 src={this.props.data.avatar_url}
                 className="avatar"
+                alt="Avatar"
               />
-              <Card.Body>
-                <Card.Title>{this.props.data.login}</Card.Title>
-                <Card.Text></Card.Text>
-              </Card.Body>
-            </Card>
+              <div class="container">
+                <h4>
+                  <b>{this.props.data.login}</b>
+                </h4>
+                <p>Architect Engineer</p>
+              </div>
+            </div>
           </div>
         </div>
       </Col>
