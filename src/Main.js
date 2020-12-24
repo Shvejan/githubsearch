@@ -39,11 +39,28 @@ class Main extends Component {
       <div className="body">
         <div className="App">
           <img src={logo} alt="logo" className="App-logo" />
-          <div className="searchbox">
+          {/* <div className="searchbox">
             <input onChange={this.handleChange} className="searchbox" />
+          </div> */}
+          <div id="cover">
+            <div class="tb">
+              <div class="td">
+                <input
+                  type="text"
+                  placeholder="Search"
+                  onChange={this.handleChange}
+                />
+              </div>
+              <div class="td" id="s-cover">
+                <button>
+                  <div id="s-circle"></div>
+                  <span></span>
+                </button>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="container m-5">
+        <div className="container m-5 box">
           <SearchValues data={this.state.searchResults} />
         </div>
       </div>
